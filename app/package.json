@@ -1,6 +1,6 @@
 {
   "name": "electron-devdocs",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "An electron-vue project",
   "main": "./dist/main.js",
   "dependencies": {
