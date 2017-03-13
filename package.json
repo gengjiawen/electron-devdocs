@@ -52,6 +52,7 @@
       "icon": "app/icons/icon.ico"
     },
     "linux": {
+      "icon": "app/icons",
       "target": [
         "AppImage",
         "deb"
