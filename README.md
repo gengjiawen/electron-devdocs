@@ -1,8 +1,8 @@
 # electron-devdocs
 
-> An electron-vue project for devdocs
 [![Build Status](https://travis-ci.org/gengjiawen/electron-devdocs.svg?branch=master)](https://travis-ci.org/gengjiawen/electron-devdocs)
 [![Build status](https://ci.appveyor.com/api/projects/status/1akkt6sjlnwwa7tu/branch/master?svg=true)](https://ci.appveyor.com/project/gengjiawen/electron-devdocs/branch/master)
+> An electron-vue project for devdocs
 
 ## Build Setup
 
