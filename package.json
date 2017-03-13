@@ -1,6 +1,6 @@
 {
   "name": "electron-devdocs",
-  "description": "an electron-vue app for devops",
+  "description": "an electron-vue app for devdocs",
   "scripts": {
     "dev": "node tasks/runner.js",
     "build": "npm run pack && build",
