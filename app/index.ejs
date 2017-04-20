@@ -9,6 +9,11 @@
         require('module').globalPaths.push('<%= htmlWebpackPlugin.options.appModules.replace(/\\/g, '\\\\') %>')
       </script>
     <% } %>
+    <style>
+      .el-tabs__content {
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
