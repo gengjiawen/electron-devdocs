@@ -34,11 +34,12 @@
     mounted () {
       console.log('mounted')
 //      this is hack for weird webview bug
-      if (this.tabIndex === 1) {
-        setTimeout(() => {
-          this.$el.querySelector('webview').reload()
-        }, 3000)
-      }
+//      only in mac, investigate tommorow
+//      if (this.tabIndex === 1) {
+//        setTimeout(() => {
+//          this.$el.querySelector('webview').reload()
+//        }, 3000)
+//      }
     },
     methods: {
       handleTabsEdit (targetName, action) {
