@@ -4,9 +4,9 @@ import {app, BrowserWindow, Menu} from 'electron'
 import { menu } from './menu'
 
 let mainWindow
-// const winURL = process.env.NODE_ENV === 'development'
-//   ? `http://localhost:${require('../../../config').port}`
-//   : `file://${__dirname}/index.html`
+const winURL = process.env.NODE_ENV === 'development'
+  ? `http://localhost:${require('../../../config').port}`
+  : `file://${__dirname}/index.html`
 
 function createWindow () {
   /**
@@ -17,7 +17,7 @@ function createWindow () {
     width: 800
   })
 
-  mainWindow.loadURL(`http://devdocs.io/`)
+  mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
     mainWindow = null
