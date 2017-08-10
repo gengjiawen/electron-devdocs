@@ -8,7 +8,7 @@
               :name="item.name" >
         <!--<version></version>-->
         <!--{{item.url}} {{item.name}}-->
-        <webview :src="item.url"></webview>
+        <webview :src="item.url" v-on:new-window="handleUrl"></webview>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -16,6 +16,7 @@
 
 <script>
   import Version from './LandingPageView/Versions.vue'
+  import {shell} from 'electron'
   export default {
     components: {
       Version
@@ -69,6 +70,9 @@
           this.editableTabsValue = activeName
           this.editableTabs = tabs.filter(tab => tab.name !== targetName)
         }
+      },
+      handleUrl (e) {
+        shell.openExternal(e.url)
       }
     }
   }
