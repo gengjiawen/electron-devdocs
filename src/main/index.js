@@ -68,8 +68,13 @@ autoUpdater.on('checking-for-update', () => {
 })
 
 autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow('Update available.')
+  sendStatusToWindow('Update available.', info)
 })
+
+autoUpdater.on('download-progress', (info) => {
+  sendStatusToWindow('download-progress', info)
+})
+
 autoUpdater.on('update-downloaded', () => {
   autoUpdater.quitAndInstall()
 })
@@ -77,5 +82,8 @@ autoUpdater.on('update-downloaded', () => {
 app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') {
     autoUpdater.checkForUpdates()
+      .then(a => {
+        sendStatusToWindow(a)
+      })
   }
 })
