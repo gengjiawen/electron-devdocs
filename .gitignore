@@ -3,6 +3,7 @@
 .DS_Store
 app/dist/*
 build/*
+!build/icons
 dist/*
 coverage
 node_modules/
