@@ -6,7 +6,7 @@
 
 ## What does it look like
 
-![pretty](arts\look.png)
+![pretty](arts/look.png)
 
 ## Build Setup
 
@@ -20,7 +20,7 @@ npm run dev
 # build electron app for production
 npm run build
 
-# lint all JS/Vue component files in `app/src`
+# lint all JS/Vue component files in `src`
 npm run lint
 
 # run webpack in production
