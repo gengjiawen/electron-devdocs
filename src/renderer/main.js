@@ -10,8 +10,8 @@ Vue.use(Electron)
 Vue.use(ElementUI)
 Vue.config.debug = true
 
-ipc.on('showDebug', (event, arg) => {
-  console.log('got message')
+ipc.on('message', (event, arg) => {
+  console.log('got message', event, arg)
 })
 
 /* eslint-disable no-new */

@@ -64,6 +64,7 @@
   "author": "Daniel Geng <technicalcute@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "electron-updater": "^2.8.7",
     "element-ui": "^1.4.2",
     "vue": "^2.4.2",
     "vue-electron": "^1.0.6",

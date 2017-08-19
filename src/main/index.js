@@ -2,7 +2,7 @@
 
 import { app, BrowserWindow, Menu } from 'electron'
 import { menu } from './menu'
-
+import { autoUpdater } from 'electron-updater'
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -58,15 +58,24 @@ app.on('activate', () => {
  * support auto updating. Code Signing with a valid certificate is required.
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  */
+function sendStatusToWindow (text) {
+  console.log(text)
+  mainWindow.webContents.send('message', text)
+}
 
-/*
-import { autoUpdater } from 'electron-updater'
+autoUpdater.on('checking-for-update', () => {
+  sendStatusToWindow('Checking for update...')
+})
 
+autoUpdater.on('update-available', (info) => {
+  sendStatusToWindow('Update available.')
+})
 autoUpdater.on('update-downloaded', () => {
   autoUpdater.quitAndInstall()
 })
 
 app.on('ready', () => {
-  if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
+  if (process.env.NODE_ENV === 'production') {
+    autoUpdater.checkForUpdates()
+  }
 })
- */
