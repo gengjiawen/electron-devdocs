@@ -2,7 +2,7 @@
 .vscode
 .DS_Store
 app/dist/*
-builds/*
+build/*
 dist/*
 coverage
 node_modules/

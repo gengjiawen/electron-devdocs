@@ -1,21 +1,14 @@
 import { ipcRenderer as ipc } from 'electron'
 import Vue from 'vue'
 import Electron from 'vue-electron'
-import Router from 'vue-router'
-import App from './App'
-import routes from './routes'
+import App from './App.vue'
+import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
 Vue.use(Electron)
-Vue.use(Router)
 Vue.use(ElementUI)
 Vue.config.debug = true
-
-const router = new Router({
-  scrollBehavior: () => ({ y: 0 }),
-  routes
-})
 
 ipc.on('showDebug', (event, arg) => {
   console.log('got message')
@@ -23,6 +16,7 @@ ipc.on('showDebug', (event, arg) => {
 
 /* eslint-disable no-new */
 new Vue({
+  components: { App },
   router,
-  ...App
+  template: '<App/>'
 }).$mount('#app')

@@ -6,8 +6,6 @@
               :key="index"
               :label="item.title"
               :name="item.name" >
-        <!--<version></version>-->
-        <!--{{item.url}} {{item.name}}-->
         <webview :src="item.url" v-on:new-window="handleUrl"></webview>
       </el-tab-pane>
     </el-tabs>
@@ -15,12 +13,9 @@
 </template>
 
 <script>
-  import Version from './LandingPageView/Versions.vue'
   import {shell} from 'electron'
   export default {
-    components: {
-      Version
-    },
+    name: 'landing-page',
     data () {
       return {
         editableTabsValue: '1',
@@ -34,13 +29,6 @@
     },
     mounted () {
       console.log('mounted')
-//      this is hack for weird webview bug
-//      only in mac, investigate tommorow
-//      if (this.tabIndex === 1) {
-//        setTimeout(() => {
-//          this.$el.querySelector('webview').reload()
-//        }, 3000)
-//      }
     },
     methods: {
       handleTabsEdit (targetName, action) {
