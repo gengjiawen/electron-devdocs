@@ -3,10 +3,6 @@ version: 0.9.{build}
 platform:
   - x64
 
-cache:
-  - '%APPDATA%\npm-cache'
-  - '%USERPROFILE%\.electron'
-
 init:
   - git config --global core.autocrlf input
 
