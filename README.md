@@ -4,6 +4,10 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/1akkt6sjlnwwa7tu/branch/master?svg=true)](https://ci.appveyor.com/project/gengjiawen/electron-devdocs/branch/master)
 > An electron-vue project for devdocs
 
+## What does it look like
+
+![pretty](arts\look.png)
+
 ## Build Setup
 
 ``` bash
