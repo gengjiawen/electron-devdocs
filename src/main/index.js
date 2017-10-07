@@ -58,9 +58,9 @@ app.on('activate', () => {
  * support auto updating. Code Signing with a valid certificate is required.
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  */
-function sendStatusToWindow (text) {
-  console.log(text)
-  mainWindow.webContents.send('message', text)
+function sendStatusToWindow (messageBundle) {
+  console.log(messageBundle)
+  mainWindow.webContents.send('message', messageBundle)
 }
 
 autoUpdater.on('checking-for-update', () => {
@@ -68,11 +68,11 @@ autoUpdater.on('checking-for-update', () => {
 })
 
 autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow('Update available.', info)
+  sendStatusToWindow({key: 'update-available', value: info})
 })
 
 autoUpdater.on(DOWNLOAD_PROGRESS, (progress) => {
-  sendStatusToWindow(DOWNLOAD_PROGRESS, progress)
+  sendStatusToWindow({key: DOWNLOAD_PROGRESS, value: progress})
 })
 
 autoUpdater.on(UPDATE_DOWNLOADED, () => {

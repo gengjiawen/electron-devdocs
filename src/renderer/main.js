@@ -11,7 +11,7 @@ Vue.use(ElementUI)
 Vue.config.debug = true
 
 ipc.on('message', (event, arg) => {
-  console.log('got message', event, arg)
+  console.log('got message', arg)
 })
 
 /* eslint-disable no-new */
