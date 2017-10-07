@@ -1,6 +1,6 @@
 {
   "name": "electron-devdocs",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "main": "./dist/electron/main.js",
   "description": "an electron-vue app for devdocs",
   "scripts": {
@@ -90,7 +90,7 @@
     "css-loader": "^0.28.7",
     "del": "^3.0.0",
     "devtron": "^1.4.0",
-    "electron": "^1.7.8",
+    "electron": "1.8.1",
     "electron-builder": "^19.34.2",
     "electron-debug": "^1.4.0",
     "electron-devtools-installer": "^2.2.0",
