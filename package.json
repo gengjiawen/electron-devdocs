@@ -16,7 +16,7 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "dist": "npm run build",
-    "release": "npm run build",
+    "release": "node .electron-vue/build.js && electron-builder",
     "re-npm": "rimraf node_modules && cnpm install",
     "test": "npm run unit && npm run e2e",
     "unit": "cross-env BABEL_ENV=testing-unit karma start test/unit/karma.conf.js",
