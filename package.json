@@ -20,7 +20,7 @@
     "re-npm": "rimraf node_modules && cnpm install",
     "test": "npm run unit && npm run e2e",
     "unit": "cross-env BABEL_ENV=testing-unit karma start test/unit/karma.conf.js",
-    "postinstall": "npm run lint:fix"
+    "postinstall": "npm run lint"
   },
   "build": {
     "productName": "Devdocs",
