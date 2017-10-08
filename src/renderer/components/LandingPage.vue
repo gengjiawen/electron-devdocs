@@ -13,57 +13,54 @@
 </template>
 
 <script>
-  import {shell} from 'electron'
-  export default {
-    name: 'landing-page',
-    data () {
-      return {
-        editableTabsValue: '1',
-        editableTabs: [{
+import {shell} from 'electron'
+export default {
+  name: 'landing-page',
+  data () {
+    return {
+      editableTabsValue: '1',
+      editableTabs: [{
+        title: 'Devdocs',
+        name: '1',
+        url: 'https://devdocs.io'
+      }],
+      tabIndex: 1
+    }
+  },
+  methods: {
+    handleTabsEdit (targetName, action) {
+      if (action === 'add') {
+        let newTabName = ++this.tabIndex + ''
+        this.editableTabs.push({
           title: 'Devdocs',
-          name: '1',
+          name: newTabName,
           url: 'https://devdocs.io'
-        }],
-        tabIndex: 1
+        })
+        this.editableTabsValue = newTabName
       }
-    },
-    mounted () {
-      console.log('mounted')
-    },
-    methods: {
-      handleTabsEdit (targetName, action) {
-        if (action === 'add') {
-          let newTabName = ++this.tabIndex + ''
-          this.editableTabs.push({
-            title: 'Devdocs',
-            name: newTabName,
-            url: 'https://devdocs.io'
-          })
-          this.editableTabsValue = newTabName
-        }
-        if (action === 'remove') {
-          let tabs = this.editableTabs
-          let activeName = this.editableTabsValue
-          if (activeName === targetName) {
-            tabs.forEach((tab, index) => {
-              if (tab.name === targetName) {
-                let nextTab = tabs[index + 1] || tabs[index - 1]
-                if (nextTab) {
-                  activeName = nextTab.name
-                }
+      if (action === 'remove') {
+        let tabs = this.editableTabs
+        let activeName = this.editableTabsValue
+        if (activeName === targetName) {
+          tabs.forEach((tab, index) => {
+            if (tab.name === targetName) {
+              let nextTab = tabs[index + 1] || tabs[index - 1]
+              if (nextTab) {
+                activeName = nextTab.name
               }
-            })
-          }
-
-          this.editableTabsValue = activeName
-          this.editableTabs = tabs.filter(tab => tab.name !== targetName)
+            }
+          })
         }
-      },
-      handleUrl (e) {
-        shell.openExternal(e.url)
+
+        this.editableTabsValue = activeName
+        this.editableTabs = tabs.filter(tab => tab.name !== targetName)
       }
+    },
+    handleUrl (e) {
+      shell.openExternal(e.url)
     }
   }
+}
 </script>
 
 <style scoped>
