@@ -56,6 +56,9 @@
       "icon": "build/icons",
       "target": [
         "AppImage",
+        "snap",
+        "apk",
+        "rpm",
         "deb"
       ]
     }
