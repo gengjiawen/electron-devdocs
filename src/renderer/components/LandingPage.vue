@@ -6,7 +6,7 @@
               :key="index"
               :label="item.title"
               :name="item.name" >
-        <webview :src="item.url" v-on:new-window="handleUrl"></webview>
+        <webview ref="webview" :src="item.url" v-on:new-window="handleUrl" @dom-ready="domReady"></webview>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -14,6 +14,7 @@
 
 <script>
 import {shell} from 'electron'
+
 export default {
   name: 'landing-page',
   data () {
@@ -26,6 +27,8 @@ export default {
       }],
       tabIndex: 1
     }
+  },
+  mounted: () => {
   },
   methods: {
     handleTabsEdit (targetName, action) {
@@ -58,6 +61,22 @@ export default {
     },
     handleUrl (e) {
       shell.openExternal(e.url)
+    },
+    domReady () {
+      console.log('ready')
+      const webviewElement = this.$refs.webview[0]
+      console.log(webviewElement)
+      require('electron-context-menu')({
+        window: webviewElement,
+        prepend: (params, browserWindow) => [{
+          label: 'Google Search',
+          click: () => {
+            console.log(params)
+            shell.openExternal(`https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-danile-geng`)
+          }
+        }]
+      })
+      // webviewElement.openDevTools()
     }
   }
 }

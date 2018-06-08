@@ -8,6 +8,11 @@
 
 ![pretty](arts/look.png)
 
+
+## Feature
+* Multi tab
+* Inner google search
+
 ## Build Setup
 
 ``` bash

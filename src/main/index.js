@@ -1,5 +1,3 @@
-'use strict'
-
 import { app, BrowserWindow, Menu } from 'electron'
 import { menu } from './menu'
 import { autoUpdater, DOWNLOAD_PROGRESS, UPDATE_DOWNLOADED } from 'electron-updater'
@@ -10,6 +8,8 @@ import { autoUpdater, DOWNLOAD_PROGRESS, UPDATE_DOWNLOADED } from 'electron-upda
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
+
+require('electron-context-menu')({})
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
