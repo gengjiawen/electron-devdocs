@@ -14,6 +14,10 @@ ipc.on('message', (event, arg) => {
   console.log('got message', arg)
 })
 
+window.checkUpdate = () => {
+  ipc.send('checkUpdate', 1)
+}
+
 /* eslint-disable no-new */
 new Vue({
   components: { App },

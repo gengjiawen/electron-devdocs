@@ -11,6 +11,7 @@
 
 ## Feature
 * Multi tab
+* Auto-Updater
 * Inner google search
 
 ## Build Setup

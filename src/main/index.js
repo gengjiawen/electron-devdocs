@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron'
+import { app, BrowserWindow, Menu, ipcMain } from 'electron'
 import { menu } from './menu'
 import { autoUpdater, DOWNLOAD_PROGRESS, UPDATE_DOWNLOADED } from 'electron-updater'
 /**
@@ -79,11 +79,24 @@ autoUpdater.on(UPDATE_DOWNLOADED, () => {
   autoUpdater.quitAndInstall()
 })
 
+ipcMain.on('checkUpdate', (event, arg) => {
+  console.log(arg)
+  checkUpdate()
+})
+
+function checkUpdate () {
+  console.log('start check')
+  autoUpdater.checkForUpdates()
+    .then(a => {
+      sendStatusToWindow(a)
+    })
+}
+
 app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') {
-    autoUpdater.checkForUpdates()
-      .then(a => {
-        sendStatusToWindow(a)
-      })
+    checkUpdate()
+    setInterval(() => {
+      checkUpdate()
+    }, 2 * 60 * 60 * 1000)
   }
 })
