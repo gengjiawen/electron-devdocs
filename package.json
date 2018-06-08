@@ -57,9 +57,9 @@
       "target": [
         "AppImage",
         "snap",
-        "apk",
+        "deb",
         "rpm",
-        "deb"
+        "apk"
       ]
     }
   },
