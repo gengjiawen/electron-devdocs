@@ -79,6 +79,10 @@ autoUpdater.on(UPDATE_DOWNLOADED, () => {
   autoUpdater.quitAndInstall()
 })
 
+autoUpdater.on('error', (ev, err) => {
+  sendStatusToWindow({key: 'Error in auto-updater.', value: err})
+})
+
 ipcMain.on('checkUpdate', (event, arg) => {
   console.log(arg)
   checkUpdate()
