@@ -76,6 +76,7 @@ autoUpdater.on(DOWNLOAD_PROGRESS, (progress) => {
 })
 
 autoUpdater.on(UPDATE_DOWNLOADED, () => {
+  console.log('update downloaded')
   autoUpdater.quitAndInstall()
 })
 
