@@ -32,8 +32,10 @@ export default {
   },
   methods: {
     handleTabsEdit (targetName, action) {
+      console.log(targetName, action)
       if (action === 'add') {
         let newTabName = ++this.tabIndex + ''
+        console.log(newTabName)
         this.editableTabs.push({
           title: 'Devdocs',
           name: newTabName,
@@ -64,18 +66,21 @@ export default {
     },
     domReady () {
       console.log('ready')
-      const webviewElement = this.$refs.webview[0]
-      console.log(webviewElement)
-      require('electron-context-menu')({
-        window: webviewElement,
-        prepend: (params, browserWindow) => [{
-          label: 'Google Search',
-          click: () => {
-            console.log(params)
-            shell.openExternal(`https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-danile-geng`)
-          }
-        }]
+      console.log(this.$refs)
+      const webviewElements = this.$refs.webview
+      webviewElements.forEach(i => {
+        require('electron-context-menu')({
+          window: i,
+          prepend: (params, browserWindow) => [{
+            label: 'Google Search',
+            click: () => {
+              console.log(params)
+              shell.openExternal(`https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-danile-geng`)
+            }
+          }]
+        })
       })
+
       // webviewElement.openDevTools()
     }
   }
