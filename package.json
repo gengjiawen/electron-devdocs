@@ -67,7 +67,7 @@
   "license": "MIT",
   "dependencies": {
     "electron-context-menu": "0.9.1",
-    "electron-updater": "2.21.10",
+    "electron-updater": "3.0.3",
     "element-ui": "2.4.1",
     "vue": "2.5.16",
     "vue-electron": "1.0.6",
