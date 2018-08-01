@@ -98,7 +98,7 @@ Renderer ${process.versions['chrome']}
 Node ${process.versions['node']}`
 
   dialog.showMessageBox({
-    title: 'Android Studio Helper',
+    title: 'Electron Devdocs',
     type: 'info',
     message: `${app.getName()}`,
     detail: info,
