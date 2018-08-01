@@ -3,6 +3,7 @@
   "version": "2.0.0-beta1",
   "main": "./dist/electron/main.js",
   "description": "an electron-vue app for devdocs",
+  "homepage": "https://github.com/gengjiawen/electron-devdocs",
   "scripts": {
     "dev": "node .electron-vue/dev-runner.js",
     "both-dev": "nodemon --delay 5 -w app/src/main .electron-vue/dev-runner.js",
