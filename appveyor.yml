@@ -14,6 +14,6 @@ install:
 
 build_script:
   - npx envinfo
-  - npm run dist
+  - npm run electron-build
 
 test: off
