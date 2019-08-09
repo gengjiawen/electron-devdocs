@@ -1,6 +1,5 @@
 import { app, BrowserWindow, Menu, ipcMain } from 'electron'
 import { menu } from './menu'
-import { autoUpdater, DOWNLOAD_PROGRESS, UPDATE_DOWNLOADED } from 'electron-updater'
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -58,44 +57,6 @@ app.on('activate', () => {
  * support auto updating. Code Signing with a valid certificate is required.
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  */
-function sendStatusToWindow (messageBundle) {
-  console.log(messageBundle)
-  mainWindow.webContents.send('message', messageBundle)
-}
-
-autoUpdater.on('checking-for-update', () => {
-  sendStatusToWindow('Checking for update...')
-})
-
-autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow({key: 'update-available', value: info})
-})
-
-autoUpdater.on(DOWNLOAD_PROGRESS, (progress) => {
-  sendStatusToWindow({key: DOWNLOAD_PROGRESS, value: progress})
-})
-
-autoUpdater.on(UPDATE_DOWNLOADED, () => {
-  console.log('update downloaded')
-  autoUpdater.quitAndInstall()
-})
-
-autoUpdater.on('error', (ev, err) => {
-  sendStatusToWindow({key: 'Error in auto-updater.', value: err})
-})
-
-ipcMain.on('checkUpdate', (event, arg) => {
-  console.log(arg)
-  checkUpdate()
-})
-
-function checkUpdate () {
-  console.log('start check')
-  autoUpdater.checkForUpdates()
-    .then(a => {
-      sendStatusToWindow(a)
-    })
-}
 
 app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') {
