@@ -18,31 +18,22 @@ cache:
   - $HOME/.cache/electron
   - $HOME/.cache/electron-builder
 
-before_install:
-  - |
-    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-      mkdir -p /tmp/git-lfs && curl -L https://github.com/github/git-lfs/releases/download/v2.3.1/git-lfs-$([ "$TRAVIS_OS_NAME" == "linux" ] && echo "linux" || echo "darwin")-amd64-2.3.1.tar.gz | tar -xz -C /tmp/git-lfs --strip-components 1
-      export PATH="/tmp/git-lfs:$PATH"
-    fi
 before_script:
-  - git lfs pull
+  - npx envinfo
 
 script:
   - |
     if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      docker run $ENVS --rm \
-        $(env | \
-          grep -Eo '^[^\s=]*(DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_)[^\s=]*' | \
-          sed '/^$/d;s/^/-e /' | \
-          paste -sd ' ' \
-        ) \
+      docker run --rm \
+        --env-file <(env | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_') \
         -v ${PWD}:/project \
         -v ~/.cache/electron:/root/.cache/electron \
         -v ~/.cache/electron-builder:/root/.cache/electron-builder \
         electronuserland/builder:wine \
         /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn release --linux --win"
     else
-      npm run release
+      yarn release
     fi
+
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
