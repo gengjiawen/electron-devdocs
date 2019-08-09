@@ -13,3 +13,5 @@ thumbs.db
 yarn*.log
 !.gitkeep
 *-lock.json
+*.log
+dist_electron/
