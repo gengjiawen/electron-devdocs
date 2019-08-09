@@ -89,7 +89,7 @@ export default {
               click: () => {
                 console.log(params)
                 shell.openExternal(
-                  `https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-danile-geng`
+                  `https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-daniel-geng`
                 )
               },
             },
