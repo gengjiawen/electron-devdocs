@@ -2,7 +2,7 @@ import { app, protocol, BrowserWindow, Menu } from 'electron'
 import { menu } from './main/menu'
 import {
   createProtocol,
-  installVueDevtools
+  installVueDevtools,
 } from 'vue-cli-plugin-electron-builder/lib'
 import { registerUpdaterTask } from './main/updater'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -18,13 +18,19 @@ if (isDevelopment) {
 let win
 
 // Scheme must be registered before the app is ready
-protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
+protocol.registerSchemesAsPrivileged([
+  { scheme: 'app', privileges: { secure: true, standard: true } },
+])
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
-    nodeIntegration: true
-  } })
+  win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -76,7 +82,6 @@ app.on('ready', async () => {
     } catch (e) {
       console.error('Vue Devtools failed to install:', e.toString())
     }
-
   }
   if (!isDevelopment) {
     registerUpdaterTask()
@@ -99,7 +104,7 @@ if (isDevelopment) {
   }
 }
 
-export function sendStatusToWindow (messageBundle) {
+export function sendStatusToWindow(messageBundle) {
   console.log(messageBundle)
   win.webContents.send('message', messageBundle)
 }

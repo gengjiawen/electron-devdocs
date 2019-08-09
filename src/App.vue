@@ -5,26 +5,27 @@
 </template>
 
 <script>
-  export default {
-  }
+export default {}
 </script>
 
 <style>
-  @import url(https://fonts.googleapis.com/css?family=Lato:300);
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
 
-  * {
-    margin: 0;
-    padding: 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  html,
-  body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
-  body {
-    font-family: Lato, Helvetica, sans-serif;
-  }
+body {
+  font-family: Lato, Helvetica, sans-serif;
+}
 
-  #app {
-    height: 100%;
-  }
+#app {
+  height: 100%;
+}
 </style>
