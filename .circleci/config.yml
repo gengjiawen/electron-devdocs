@@ -13,11 +13,11 @@ jobs:
             - v1-dependencies-
       - run: npx envinfo
       - run: yarn
+      - run: yarn release --linux --win
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn release --linux --win
 
 workflows:
   version: 2
