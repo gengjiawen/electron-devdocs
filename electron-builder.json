@@ -9,12 +9,11 @@
     },
     "linux": {
       "icon": "build/icons",
+      "category": "Development",
       "target": [
         "AppImage",
         "snap",
-        "deb",
-        "rpm",
-        "apk"
+        "deb"
       ]
     }
 }
