@@ -9,6 +9,7 @@
     },
     "linux": {
       "icon": "build/icons",
+      "category": "Development",
       "target": [
         "AppImage",
         "snap",
