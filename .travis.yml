@@ -16,7 +16,6 @@ cache:
   directories:
   - node_modules
   - $HOME/.cache/electron
-  - $HOME/.cache/electron-builder
 
 before_script:
   - npx envinfo
@@ -32,7 +31,6 @@ script:
         ) \
         -v ${PWD}:/project \
         -v ~/.cache/electron:/root/.cache/electron \
-        -v ~/.cache/electron-builder:/root/.cache/electron-builder \
         electronuserland/builder:wine-chrome \
         /bin/bash -c "npx envinfo && yarn --link-duplicates --pure-lockfile && yarn release --linux --win"
     else
