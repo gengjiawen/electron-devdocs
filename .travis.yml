@@ -15,6 +15,7 @@ cache:
   - $HOME/.cache/electron-builder
 
 before_script:
+  - npm i -g yarn
   - npx envinfo
 
 script:
