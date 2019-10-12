@@ -13,7 +13,7 @@ init:
 
 install:
   - ps: Install-Product node latest x64
-  - npm install
+  - yarn install
 
 build_script:
   - npx envinfo
