@@ -12,7 +12,10 @@ init:
 
 
 install:
-  - ps: Install-Product node latest x64
+  - ps: Install-Product node 12 x64
+  - git clone https://github.com/cjihrig/uvwasi
+  - choco install mingw
+  - choco install clion-ide
   - yarn install
 
 build_script:
