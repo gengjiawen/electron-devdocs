@@ -1,6 +1,6 @@
 version: 1.0.{build}
 image:
-- Visual Studio 2017
+- Visual Studio 2019
 
 platform:
   - x64
@@ -11,7 +11,7 @@ init:
 
 
 install:
-  - ps: Install-Product node stable x64
+  - ps: Install-Product node latest x64
   - npm install
 
 build_script:
