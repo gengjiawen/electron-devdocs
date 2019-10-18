@@ -27,7 +27,7 @@
     "vue-router": "3.1.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.10.0",
+    "@vue/cli-plugin-babel": "^4.0.4",
     "@vue/cli-plugin-e2e-cypress": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-plugin-unit-jest": "^3.10.0",
