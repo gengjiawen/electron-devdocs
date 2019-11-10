@@ -1,6 +1,6 @@
 version: 1.0.{build}
 image:
-- Visual Studio 2017
+  - Visual Studio 2019
 
 platform:
   - x64
@@ -10,10 +10,10 @@ init:
 
 install:
   - ps: Install-Product node stable x64
-  - npm install
+  - yarn install
 
 build_script:
   - npx envinfo
-  - npm run electron-build
+  - yarn run electron-build
 
 test: off
