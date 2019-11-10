@@ -93,7 +93,7 @@ export default {
                   `https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-daniel-geng`
                 )
               },
-            }
+            },
           ],
         })
       })
