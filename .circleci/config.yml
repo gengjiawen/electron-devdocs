@@ -12,6 +12,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: npx envinfo
+      - run: npm i -g n && n latest
       - run: yarn
       - run: yarn release --linux --win
       - save_cache:
