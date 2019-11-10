@@ -83,16 +83,17 @@ export default {
       webviewElements.forEach(i => {
         require('electron-context-menu')({
           window: i,
-          prepend: params => [
+          prepend: (defaultActions, params) => [
             {
               label: 'Google Search',
+              visible: params.selectionText.trim().length > 0,
               click: () => {
-                console.log(params)
+                console.log(`params`, params)
                 shell.openExternal(
                   `https://www.google.com/search?q=${params.selectionText}&&client=electron-devdocs-by-daniel-geng`
                 )
               },
-            },
+            }
           ],
         })
       })
