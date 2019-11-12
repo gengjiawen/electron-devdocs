@@ -12,7 +12,6 @@
       "category": "Development",
       "target": [
         "AppImage",
-        "snap",
         "deb"
       ]
     }
