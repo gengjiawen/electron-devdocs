@@ -1,6 +1,6 @@
 {
   "name": "electron-devdocs",
-  "version": "4.0.0-beta1",
+  "version": "5.0.0-beta1",
   "main": "background.js",
   "description": "an electron-vue app for devdocs",
   "homepage": "https://github.com/gengjiawen/electron-devdocs",
@@ -34,13 +34,13 @@
     "@vue/cli-service": "^4.0.5",
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
-    "electron": "7.1.7",
+    "electron": "8.0.2",
     "babel-eslint": "^10.0.3",
     "eslint": "6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.0",
     "prettier": "^1.19.1",
-    "vue-cli-plugin-electron-builder": "^1.4.1",
+    "vue-cli-plugin-electron-builder": "2.0.0-beta.4",
     "vue-template-compiler": "2.6.10"
   }
 }

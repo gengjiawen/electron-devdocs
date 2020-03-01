@@ -104,7 +104,7 @@ Node ${process.versions['node']}`
   dialog.showMessageBox({
     title: 'Electron Devdocs',
     type: 'info',
-    message: `${app.getName()}`,
+    message: `${app.name}`,
     detail: info,
     noLink: true,
   })
@@ -112,7 +112,7 @@ Node ${process.versions['node']}`
 
 if (process.platform === 'darwin') {
   template.unshift({
-    label: app.getName(),
+    label: app.name,
     submenu: [
       {
         role: 'about',
