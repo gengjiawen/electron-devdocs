@@ -19,7 +19,7 @@
   "author": "Daniel Geng <technicalcute@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "core-js": "3.4.0",
+    "core-js": "3.6.4",
     "electron-context-menu": "0.15.1",
     "electron-updater": "4.2.0",
     "element-ui": "2.12.0",
