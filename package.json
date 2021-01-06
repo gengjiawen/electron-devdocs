@@ -1,6 +1,6 @@
 {
   "name": "electron-devdocs",
-  "version": "5.0.0-beta3",
+  "version": "5.1.0",
   "main": "background.js",
   "description": "an electron-vue app for devdocs",
   "homepage": "https://github.com/gengjiawen/electron-devdocs",
