@@ -1,10 +1,11 @@
-import { app, protocol, BrowserWindow, Menu } from 'electron'
+import { app, protocol, BrowserWindow, Menu, shell } from "electron";
 import { menu } from './main/menu'
 import {
   createProtocol,
-  installVueDevtools,
 } from 'vue-cli-plugin-electron-builder/lib'
+import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import { registerUpdaterTask } from './main/updater'
+import electron_context_menu from "electron-context-menu";
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 require('electron-context-menu')({})
@@ -28,6 +29,7 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
+      enableRemoteModule: true,
       nodeIntegration: true,
       webviewTag: true,
     },
@@ -79,7 +81,7 @@ app.on('ready', async () => {
     // If you are not using Windows 10 dark mode, you may uncomment these lines
     // In addition, if the linked issue is closed, you can upgrade electron and uncomment these lines
     try {
-      await installVueDevtools()
+      await installExtension(VUEJS_DEVTOOLS)
     } catch (e) {
       console.error('Vue Devtools failed to install:', e.toString())
     }
