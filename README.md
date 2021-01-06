@@ -1,7 +1,6 @@
 # electron-devdocs
 
 [![CircleCI](https://circleci.com/gh/gengjiawen/electron-devdocs.svg?style=svg)](https://circleci.com/gh/gengjiawen/electron-devdocs)
-[![Build Status](https://travis-ci.org/gengjiawen/electron-devdocs.svg?branch=master)](https://travis-ci.org/gengjiawen/electron-devdocs)
 [![Build status](https://ci.appveyor.com/api/projects/status/1akkt6sjlnwwa7tu/branch/master?svg=true)](https://ci.appveyor.com/project/gengjiawen/electron-devdocs/branch/master)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/gengjiawen/electron-devdocs)
 
