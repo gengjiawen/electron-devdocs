@@ -1,6 +1,6 @@
 # Changelog
 
-## [5.1.0](https://www.github.com/gengjiawen/electron-devdocs/compare/v1.0.2...v5.1.0) (2021-01-06)
+## [5.1.0](https://www.github.com/gengjiawen/electron-devdocs/compare/v5.0.0-beta3...v5.1.0) (2021-01-06)
 
 
 ### ⚠ BREAKING CHANGES
