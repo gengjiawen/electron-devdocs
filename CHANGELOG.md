@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0](https://www.github.com/gengjiawen/electron-devdocs/compare/v5.1.0...v5.2.0) (2021-01-07)
+
+
+### Features
+
+* refactor ci ([#163](https://www.github.com/gengjiawen/electron-devdocs/issues/163)) ([cfa2a96](https://www.github.com/gengjiawen/electron-devdocs/commit/cfa2a9649b484d68f201504035a5eafe7f22cb7c))
+
 ## [5.1.0](https://www.github.com/gengjiawen/electron-devdocs/compare/v5.0.0-beta3...v5.1.0) (2021-01-06)
 
 
