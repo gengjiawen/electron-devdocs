@@ -1,19 +1,27 @@
 version: 1.0.{build}
 image:
   - Visual Studio 2019
+  - macOS
 
 platform:
   - x64
+for:
+  -
+    matrix:
+      only:
+        - image: Visual Studio 2019
+    install:
+      - ps: Install-Product node stable x64
+      - yarn
 
 init:
   - git config --global core.autocrlf input
 
 install:
-  - ps: Install-Product node stable x64
-  - yarn install
+  - npm i -g yarn && yarn
 
 build_script:
   - npx envinfo
-  - yarn run electron-build
+  - yarn release
 
 test: off
