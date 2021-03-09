@@ -31,6 +31,7 @@ function createWindow() {
     webPreferences: {
       enableRemoteModule: true,
       nodeIntegration: true,
+      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
       webviewTag: true,
     },
   })
