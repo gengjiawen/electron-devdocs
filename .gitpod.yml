@@ -2,4 +2,5 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: yarn install && yarn electron:serve --no-sandbox
+  - init: yarn install
+    command: yarn electron:serve --no-sandbox
